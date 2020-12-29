@@ -1,4 +1,6 @@
 # Automation practice projects...
+### Zyno
+A shell based Alexa which helps me execute other scripts easily without having to type them out or place them all in bin.
 
 ### File logger
 Script that is useful for keeping track of any changes made to a specific directory;
