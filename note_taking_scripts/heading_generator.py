@@ -18,12 +18,11 @@ def generate_heading(text, style):
                  "   ").center(style['width'], style['symbol'])
     depth_on_each_side = (style['depth'] - 1) // 2
     if depth_on_each_side < 1:
-        return text_line
+        return ("\n\"\"\"\n" + text_line + "\n\"\"\"\n")
 
     depth_padding = ("".center(style['width'], style['symbol']) + '\n')
 
-    output = f"""{depth_padding * depth_on_each_side}{text_line}\n{depth_padding * depth_on_each_side}
-
+    output = f"""\"\"\"\n{depth_padding * depth_on_each_side}{text_line}\n{depth_padding * depth_on_each_side}\"\"\"
     """
 
     return output
