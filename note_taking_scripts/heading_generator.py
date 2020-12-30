@@ -1,6 +1,8 @@
 #! /usr/bin/env python3
 # heading_generator.py creates different styles of headers and section dividers for note taking in Python for better organizing
-# It takes a user input of a text string to be decorated, and a style.
+# note taking within python scripts
+# it takes a argument of the style, if left empy
+
 
 import pyperclip
 import sys
@@ -10,9 +12,9 @@ import sys
 separator = {'name': 'separator', 'depth': 3, 'width': 120, 'symbol': "-"}
 h1 = {'name': 'h1', 'depth': 1, 'width': 120, 'symbol': "*"}
 h2 = {'name': 'h2', 'depth': 1, 'width': 120, 'symbol': "#"}
-custom = {'name': "custom_style"}
+custom = {'name': "custom"}
 
-style_list = [separator, h1, h2]
+style_list = [separator, h1, h2, custom]
 
 
 # function definition
@@ -32,13 +34,16 @@ def generate_heading(text, style):
 
 # user interaction
 
-if len(sys.argv) < 2:
-    print('Usage: python heading_generator.py [style] - choose a style')
+if len(sys.argv) < 2 or sys.argv[1] not in [style['name'] for style in style_list]:
+    print('Usage: python heading_generator.py [style] - choose a style;')
     print('Below are some of the styles available in the default stylesheet')
 
     for style in style_list:
-        print(f"{style.get('name')}: \nDepth: {style.get('depth')} \nWidth: {style.get('width')} \nSymbol: {style.get('symbol')} \nExample:\n" +
-              generate_heading("TEST", style) + ' \n')
+        try:
+            print(f"{style.get('name')}: \nDepth: {style.get('depth')} \nWidth: {style.get('width')} \nSymbol: {style.get('symbol')} \nExample:\n" +
+                  generate_heading("TEST", style) + ' \n')
+        except:
+            pass
 
     print(
         "if none of them suit your style, use the keyword 'custom' as the argument for [style] when calling the program")
