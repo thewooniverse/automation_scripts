@@ -27,8 +27,8 @@ def str_gen(msg_type):
 
     elif msg_type == "off":
 
-        result += f'{random_emoji_seq} {sign_off_ls[random.randint(0, len(sign_off_ls)-1)]} {random_emoji_seq}'
-        result += f"\nTime now is...{format_now}"
+        result += f'{random_emoji_seq} {sign_off_ls[random.randint(0, len(sign_off_ls)-1)]} {random_emoji_seq}\n'
+        result += f"\nTime now is...\n{format_now}\n"
         result += f"\nPing me on Slack still if urgent!!"
 
     return result
