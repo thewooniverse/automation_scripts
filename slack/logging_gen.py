@@ -20,8 +20,8 @@ def str_gen(msg_type):
 
     if msg_type == "on":
 
-        result += f'{sign_on_ls[random.randint(0, len(sign_on_ls)-1)]}'
-        result += f"\nTime now is...{format_now}"
+        result += f'{sign_on_ls[random.randint(0, len(sign_on_ls)-1)]}\n'
+        result += f"\nTime now is...\n{format_now}\n"
         result += "\nPlease check this thread for things I'll be working on and updates!"
 
     elif msg_type == "off":
