@@ -1,8 +1,11 @@
 #! /usr/bin/env python3
 # heading_generator.py creates different styles of headers and section dividers for note taking in Python for better organizing
 # note taking within python scripts
-# it takes a argument of the style, if left empy
+# it takes a argument of the style, if left empty or invalid style entered displayes available styles and other options
+# passing custom as a style when calling the function allows for custom design of a new style.
 
+
+# TODO
 
 import pyperclip
 import sys
@@ -12,9 +15,10 @@ import sys
 separator = {'name': 'separator', 'depth': 3, 'width': 120, 'symbol': "-"}
 h1 = {'name': 'h1', 'depth': 1, 'width': 120, 'symbol': "*"}
 h2 = {'name': 'h2', 'depth': 1, 'width': 120, 'symbol': "#"}
+h3 = {'name': 'h3', 'depth': 0, 'width': 120, 'symbol': "#"}
 custom = {'name': "custom"}
 
-style_list = [separator, h1, h2, custom]
+style_list = [separator, h1, h2, h3, custom]
 
 
 # function definition
